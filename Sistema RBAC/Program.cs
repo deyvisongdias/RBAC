@@ -33,7 +33,7 @@ namespace Sistema_RBAC
                 if (option == 2)
                 {
                     Console.WriteLine("Digite o cpf do Usuario a ser apagado:");
-                    int cpf = int.Parse(Console.ReadLine());
+                    String cpf = Console.ReadLine();
                     admin.removeUser(cpf);
                 }
                 if (option == 3)
@@ -49,7 +49,7 @@ namespace Sistema_RBAC
                     Console.WriteLine("Saindo...");
                     Console.WriteLine("----------------------------------------------------");
                 }
-                else
+                if (option!=0 && option!=2 && option!=3 && option!=1)
                 {
                     Console.WriteLine("Opcao invalida");
                 }

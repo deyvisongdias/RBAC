@@ -15,12 +15,12 @@ namespace Sistema_RBAC
     internal class User
     {
         public String name { get; set; }
-        public int cpf { get; set; }
+        public String cpf { get; set; }
         public String login { get; set; }
         public String pass { get; set; }
         public Role role { get; set; }
 
-        public User(String name, int cpf,String login,String pass, Role role)
+        public User(String name, String cpf,String login,String pass, Role role)
         {
             this.name = name;
             this.cpf = cpf;
@@ -36,9 +36,9 @@ namespace Sistema_RBAC
         public String toString()
         {
 
-            return "Name: " + this.name + "/n" +
-                    "CPF: " + this.name + "/n" +
-                    "user Type: " + this.role.ToString() + "/n" +
+            return "Name: " + this.name + "\n" +
+                    "CPF: " + this.name + "\n" +
+                    "user Type: " + this.role.ToString() + "\n" +
                     "Login: " + this.login;              
         }
 

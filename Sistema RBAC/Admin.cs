@@ -21,6 +21,8 @@ namespace Sistema_RBAC
             this.name = name;
             this.login = login;
             this.password = password;
+            User us = new User();
+            Users.Add(us);
         }
 
         public Admin()  {
@@ -33,7 +35,7 @@ namespace Sistema_RBAC
             Console.WriteLine("Digite o login do usuario:");
             String login = Console.ReadLine();
             Console.WriteLine("Digite o CPF do usuario:");
-            int cpf = int.Parse(Console.ReadLine());
+            String cpf =Console.ReadLine();
             Console.WriteLine("Digite o tipo do usuario:");
             Console.WriteLine(" 1 - Usuario\n 2 - Administrador limitado\n 3 - Administrador");
             int type = int.Parse(Console.ReadLine());
@@ -44,7 +46,8 @@ namespace Sistema_RBAC
             Console.WriteLine("Digite a senha de sistema:");
             String password = Console.ReadLine();
             User user = new User(name,cpf, login, password, role);
-            insertUser(user);
+            Console.Write(user.toString());
+            Users.Add(user);
         }
 
         public void insertUser(User user) 
@@ -52,7 +55,7 @@ namespace Sistema_RBAC
             this.Users.Add(user);
         }
 
-        public void removeUser(int key)
+        public void removeUser(String key)
         {
             
             foreach(User user in this.Users)
